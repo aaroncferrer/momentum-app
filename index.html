@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Momentum App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&family=Montserrat:wght@200&family=Oswald:wght@200&family=Poppins:wght@300&family=Public+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/8077b29d9a.js" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap SCSS -->
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- EXTERNAL CSS -->
+    <link rel='stylesheet' type='text/css' media='screen' href='./styles.css'>
+
+    <!-- ICONSCOUT/UNICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    
+</head>
+<body>
+
+    <main>
+        <!-- Clock -->
+        <h1 class="clock">00:00:00</h1>
+
+        <!-- Clock ver2 -->
+        <div class="digital-clock">
+            <div class="time">
+                <span class="hours">00</span>
+                <span class="colon">:</span>
+                <span class="minutes">00</span>
+                <div class="right-side">
+                    <span class="period">AM</span>
+                    <span class="seconds">00</span>
+                </div>
+            </div>
+
+            <div class="calendar">
+                <span class="month-name">Sep</span>,
+                <span class="day-name">Saturday</span>
+                <span class="day-number">12</span>
+                <span class="year">2022</span>
+            </div>
+        </div>
+
+        <!-- Name -->
+        <form class="hidden name-container">
+            <input type="text" placeholder="What's your name?">
+        </form>
+
+        <!-- Greet Div -->
+        <div class="greet-container">
+            <h1 class="hidden greet"></h1>
+
+            <!-- Reset Name -->
+            <form class="hidden toggle-container">
+                <input type="button" id="toggle">
+                <label for="toggle">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </label>
+            </form>
+            <form class="hidden rename">
+                <input type="submit" value="RENAME" />
+            </form>
+        </div>
+
+        <!-- Focus -->
+        <div class="hidden focus-container">
+            <form class="focus-form">
+                <input type="text" placeholder="What is your main focus for today?">
+            </form>
+            <ul class="focus">
+                <!-- li will be appended here -->
+            </ul>
+        </div>
+
+        <!-- Quotes -->
+        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est." - Anthony Ferrer</p>
+
+        <!-- Weather -->
+        <h4 id="another-h4">Santa Rosa @ 32</h4>
+
+        <!-- ToDo -->
+        <h4 id="test-h4" data-bs-toggle="modal" data-bs-target="#exampleModal">Todo</h4>
+  
+        <!-- Modal for ToDo -->
+        <div class="modal fade  modal-container" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+
+    </main>
+
+    <script src='./js/clock.js'></script>
+    <script src='./js/clock2.js'></script>
+    <script src='./js/background.js'></script>
+    <script src='./js/greet.js'></script>
+    <script src='./js/focus.js'></script>
+
+    <!-- JavaScript -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
+
