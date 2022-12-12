@@ -23,16 +23,45 @@
     <!-- ICONSCOUT/UNICONS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    
 </head>
 <body>
 
     <main>
         <!-- Clock -->
-        <h1 class="clock">00:00:00</h1>
+        <div class="clock-container">
+            
+            <i class="fa-solid fa-ellipsis clock-menu-btn" id="active-menu"></i>
+            <ul class="clock-menu" id="active-menu">
+                <li class="menu-item" id="active-menu">
+                    <span class="clock-format-text" id="active-menu">24-hour FORMAT</span>
+                    <div class="switch-btn" id="active-menu" data-format="12"></div>
+                </li>
+            </ul>
+
+            <div class="clock-inner">
+            <span class="clock">00:00:00</span>
+            <span class="period-v2">AM/PM</span>
+            </div>
+            
+            <div class="calendar">
+                <span class="month-name">Month</span>,
+                <span class="day-name">Day</span>
+                <span class="day-number">00</span>
+                <span class="year">0000</span>
+            </div>
+        </div>
 
         <!-- Clock ver2 -->
-        <div class="digital-clock">
+        <!-- <div class="digital-clock">
+
+            <i class="uil uil-ellipsis-v clock-menu-btn" id="active-menu"></i>
+            <ul class="clock-menu" id="active-menu">
+                <li class="menu-item" id="active-menu">
+                    <span class="clock-format-text" id="active-menu">24-hour format</span>
+                    <div class="switch-btn" id="active-menu" data-format="12"></div>
+                </li>
+            </ul>
+
             <div class="time">
                 <span class="hours">00</span>
                 <span class="colon">:</span>
@@ -44,12 +73,12 @@
             </div>
 
             <div class="calendar">
-                <span class="month-name">Sep</span>,
-                <span class="day-name">Saturday</span>
-                <span class="day-number">12</span>
-                <span class="year">2022</span>
+                <span class="month-name">Month</span>,
+                <span class="day-name">Day</span>
+                <span class="day-number">00</span>
+                <span class="year">0000</span>
             </div>
-        </div>
+        </div> -->
 
         <!-- Name -->
         <form class="hidden name-container">
@@ -61,15 +90,16 @@
             <h1 class="hidden greet"></h1>
 
             <!-- Reset Name -->
-            <form class="hidden toggle-container">
+            <form class="hidden toggle-container visible" id="visible">
                 <input type="button" id="toggle">
                 <label for="toggle">
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <i class="fa-solid fa-ellipsis toggle-btn"></i>
                 </label>
             </form>
             <form class="hidden rename">
-                <input type="submit" value="RENAME" />
+                <input type="submit" value="RENAME"/>
             </form>
+            
         </div>
 
         <!-- Focus -->
@@ -86,6 +116,9 @@
         <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est." - Anthony Ferrer</p>
 
         <!-- Weather -->
+        <div class="weather">
+            <i class="uil uil-cloud-sun"></i>
+        </div>
         <h4 id="another-h4">Santa Rosa @ 32</h4>
 
         <!-- ToDo -->
@@ -113,7 +146,7 @@
     </main>
 
     <script src='./js/clock.js'></script>
-    <script src='./js/clock2.js'></script>
+    <!-- <script src='./js/clock2.js'></script> -->
     <script src='./js/background.js'></script>
     <script src='./js/greet.js'></script>
     <script src='./js/focus.js'></script>

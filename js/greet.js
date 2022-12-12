@@ -6,8 +6,8 @@ const toggle = toggleContainer.querySelector('input');
 const rename = document.querySelector('.rename'); 
 const storedName = localStorage.getItem('username');
 
-const date = new Date();
-const currentHour = date.getHours();
+const today = new Date();
+const currentHour = today.getHours();
 
 // Checking if localStorage is empty
 if (storedName === null) {

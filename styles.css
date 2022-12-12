@@ -11,6 +11,7 @@
     display: none;
 }
 
+/* VISIBILITY OF ELEMENTS */
 body {
     font-family: 'Public Sans', sans-serif;
     font-weight: lighter;
@@ -40,6 +41,20 @@ main {
     height: 100vh;
 }
 
+.clock-container {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container:hover .clock-menu-btn{
+    transition: 0.3s ease;
+    opacity: 1;
+}
+
 .clock {
     color: white;
     font-size: 120px;
@@ -47,7 +62,7 @@ main {
 }
 
 /* CLOCK VER2 */
-.digital-clock {
+/* .digital-clock {
     position: relative;
     color: white;
     width: 425px;
@@ -104,7 +119,7 @@ main {
 
 .seconds {
     transform: translateY(16px);
-}
+} */
 
 .calendar {
     display: flex;
@@ -113,10 +128,94 @@ main {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 5px;
+    transform: translateY(-10px);
 }
 
 .day-name, .day-number, .year {
     margin-left: 8px;
+}
+
+.clock-menu-btn {
+    color: white;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    border-radius: 25px;
+}
+
+.clock-menu-btn:hover {
+    outline: 2px solid white;
+    outline-offset: 4px;
+    transition: 0.2s;
+}
+
+.clock-menu {
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: 28px;
+    z-index: 1;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 6.5px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.clock-menu.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-format-text {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.switch-btn {
+    width: 35px;
+    height: 15px;
+    background: #485470;
+    border-radius: 75px;
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-btn::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #ff5e9a;
+    border-radius: 50%;
+    box-shadow: 0 5px 25px #ff5e9a;
+    transform: translateX(-10px);
+    transition: 0.3s ease;
+    transition-property: background, transform ;
+}
+
+.switch-btn.active::before {
+    background-color: #0bff8d;
+    box-shadow: 0 5px 25px #0bff8d;
+    transform: translateX(10px);
 }
 
 /* ---------------------- */
@@ -165,6 +264,16 @@ main {
     letter-spacing: 1px;
     font-size: 45px;
     color: white;
+}
+
+.toggle-container {
+    cursor: pointer;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+.greet-container:hover .toggle-container {
+    opacity: 1;
 }
 
 /* TOGGLE-MENU */
