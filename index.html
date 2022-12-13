@@ -51,35 +51,6 @@
             </div>
         </div>
 
-        <!-- Clock ver2 -->
-        <!-- <div class="digital-clock">
-
-            <i class="uil uil-ellipsis-v clock-menu-btn" id="active-menu"></i>
-            <ul class="clock-menu" id="active-menu">
-                <li class="menu-item" id="active-menu">
-                    <span class="clock-format-text" id="active-menu">24-hour format</span>
-                    <div class="switch-btn" id="active-menu" data-format="12"></div>
-                </li>
-            </ul>
-
-            <div class="time">
-                <span class="hours">00</span>
-                <span class="colon">:</span>
-                <span class="minutes">00</span>
-                <div class="right-side">
-                    <span class="period">AM</span>
-                    <span class="seconds">00</span>
-                </div>
-            </div>
-
-            <div class="calendar">
-                <span class="month-name">Month</span>,
-                <span class="day-name">Day</span>
-                <span class="day-number">00</span>
-                <span class="year">0000</span>
-            </div>
-        </div> -->
-
         <!-- Name -->
         <form class="hidden name-container">
             <input type="text" placeholder="What's your name?">
@@ -103,23 +74,34 @@
         </div>
 
         <!-- Focus -->
-        <div class="hidden focus-container">
+        <div class="focus-container">
             <form class="focus-form">
-                <input type="text" placeholder="What is your main focus for today?">
+                <input type="text" placeholder="What is your main focus for today?" class="focus-input">
             </form>
             <ul class="focus">
                 <!-- li will be appended here -->
             </ul>
+            <p class="block praise">Awesome work!</p>
         </div>
 
         <!-- Quotes -->
-        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Est." - Anthony Ferrer</p>
+        <div class="quote-container">
+            <p class="quote-text">
+                
+            </p>
+            <p class="quote-author"></p>
+        </div>
 
         <!-- Weather -->
-        <div class="weather">
-            <i class="uil uil-cloud-sun"></i>
+        <div class="weather-container">
+            <div class="weather">
+                <i class="uil uil-cloud-sun cloud"></i>
+                <span class="temperature">27°</span>
+            </div>
+
+            <span class="location">Santa Rosa</span>
+            
         </div>
-        <h4 id="another-h4">Santa Rosa @ 32</h4>
 
         <!-- ToDo -->
         <h4 id="test-h4" data-bs-toggle="modal" data-bs-target="#exampleModal">Todo</h4>
@@ -141,15 +123,14 @@
             </div>
             </div>
         </div>
-        
 
     </main>
 
     <script src='./js/clock.js'></script>
-    <!-- <script src='./js/clock2.js'></script> -->
     <script src='./js/background.js'></script>
     <script src='./js/greet.js'></script>
     <script src='./js/focus.js'></script>
+    <script src='./js/quote.js'></script>
 
     <!-- JavaScript -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

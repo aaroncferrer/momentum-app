@@ -11,8 +11,19 @@
     display: none;
 }
 
-/* VISIBILITY OF ELEMENTS */
+.praise {
+    transition: 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visibility {
+    opacity: 1;
+    visibility: visible;
+}
+
 body {
+    color: white;
     font-family: 'Public Sans', sans-serif;
     font-weight: lighter;
     width: 100%;
@@ -60,66 +71,6 @@ main {
     font-size: 120px;
     letter-spacing: 3px;
 }
-
-/* CLOCK VER2 */
-/* .digital-clock {
-    position: relative;
-    color: white;
-    width: 425px;
-    padding: 20px 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-.time {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hours, .colon, .minutes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    padding: 0 10px;
-    line-height: 125px;
-}
-
-.hours, .minutes {
-    font-size: 6.5em;
-    width: 125px;
-}
-
-.colon {
-    font-size: 5em;
-}
-
-.right-side {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 10px;
-}
-
-.period, .seconds {
-    font-size: 1.2em;
-    font-weight: 500;
-}
-
-.period {
-    transform: translateY(-20px);
-}
-
-.seconds {
-    transform: translateY(16px);
-} */
 
 .calendar {
     display: flex;
@@ -270,6 +221,7 @@ main {
     cursor: pointer;
     transition: 0.3s ease;
     opacity: 0;
+    transform:translate(-12px,-16px);
 }
 
 .greet-container:hover .toggle-container {
@@ -299,7 +251,7 @@ main {
 /* RENAME */
   
 .rename {
-    margin-left: 15px;
+    transform: translateX(-10px);
     height: 30px;
     margin-bottom: 20px;
 }
@@ -326,6 +278,7 @@ main {
 /* FOCUS */
 .focus-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -352,12 +305,75 @@ main {
     outline: none;
 }
 
+.focus::-webkit-scrollbar {
+    display: none;
+}
+
+.focus li {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+  
+.focus input[type="checkbox"] {
+    transform: translateY(3px);
+    width: 18px;
+
+    transition: 0.3s ease;
+    opacity: 0;
+}
+  
+.focus input[type="checkbox"]:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+  
+input:checked + label {
+    text-decoration: line-through;
+    color: rgb(197, 197, 197);
+}
+  
+label {
+    letter-spacing: 2px;
+    margin: 0px 15px;
+    font-weight: bold;
+    word-break: break-all;
+    font-size: 50px;
+}
+  
+.focus li button {
+    cursor: pointer;
+    color: rgb(255, 255, 255, 0.6);
+    transition: all ease 0.5s;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transform: translateY(2px);
+
+    transition: 0.3s ease;
+    opacity: 0;
+}
+  
+.focus li button:hover {
+    opacity: 1;
+}
+
 /* Quotes */
-p {
-    font-style: italic;
+.quote-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 2%;
     left: 1%;
+}
+
+.quote-text, .quote-author {
+    font-style: italic;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -375,14 +391,24 @@ p {
     font-family: 'Poppins', sans-serif;
 }
 
-#another-h4 {
+/* WEATHER */
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
     position: absolute;
     top: 2%;
     right: 1.5%;
-    font-style: italic;
-    opacity: 75%;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    align-items: flex-end;
+}
+
+.cloud {
+    font-size: 30px;
+}
+
+.temperature {
+    font-size: 30px;
 }
 
 

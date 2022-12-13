@@ -31,10 +31,12 @@ function logIn(event) {
 function greetUser(username) {
   if (currentHour >= 6 && currentHour < 12) {
     greet.innerText = `Good morning, ${username}. Have a great day ahead!`;
-  } else if (currentHour >= 12 && currentHour < 17) {
+  } else if (currentHour >= 12 && currentHour < 18) {
     greet.innerText = `Good afternoon, ${username}. Any tasks left?`;
+  } else if(currentHour >= 18 && currentHour < 21){
+    greet.innerText = `Good evening, ${username}. Day's almost over!`;
   } else {
-    greet.innerText = `Good night, ${username}. You did well today.`;
+    greet.innerText = `Good night, ${username}. You did well today!`;
   }
 
   greet.classList.remove('hidden');
