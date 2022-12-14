@@ -19,6 +19,7 @@ function displayFocus(newFocusObj) {
         input.checked = true;
     }
     const label = document.createElement("label");
+    // The focus text
     label.innerText = newFocusObj.text;
     const button1 = document.createElement("button");
     button1.innerHTML = "&#10005;";
@@ -37,7 +38,11 @@ function displayFocus(newFocusObj) {
     
     focus.appendChild(li);
 
-    // console.log(input.checked)
+    // So that the focusForm won't render even if after hard-refreshing, as long as savedFocus has a value.
+    if(savedFocus !== null){
+        focusForm.classList.add('hidden');
+    }
+
 }
 
 function deleteFocus(event) {
@@ -56,6 +61,7 @@ function handleFocusSubmit(event) {
     focusInput.value = "";
     const newFocusObj = {
         text: newFocus,
+        // Date.now() returns the number of milliseconds since January 1, 1970.
         id: Date.now(),
         checked: false,
     };
@@ -76,11 +82,10 @@ function saveFocus() {
 focusForm.addEventListener("submit", handleFocusSubmit);
 
     if (savedFocus !== null) {
+    // Parse the data with JSON.parse(), and the data becomes a JavaScript object. --> This way we can access the values of keys from savedFocus (e.g., newFocusObj.text)
     const parsedTodos = JSON.parse(savedFocus);
     singleFocus = parsedTodos;
     parsedTodos.forEach(displayFocus);
     }
 
 window.addEventListener("beforeunload", saveFocus);
-
-
