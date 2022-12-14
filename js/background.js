@@ -1,4 +1,4 @@
-const imgArr = ['bg1.png', 'bg2.png', 'bg3.png', 'bg4.png']
+const imgArr = ['bg1.png', 'bg2.png', 'bg3.png', 'bg4.png', 'bg5.png']
 
 // Math.floor() -> Rounds down and returns the largest integer less than or equal to a given number
 // Math.random() -> Returns a number equal to 0 or less than 1. 

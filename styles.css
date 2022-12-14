@@ -11,16 +11,19 @@
     display: none;
 }
 
-.praise {
-    transition: 0.3s ease;
+.greet, .praise {
     opacity: 0;
     visibility: hidden;
 }
 
 .visibility {
+    transition: 0.3s ease;
+    transition-delay: 320ms;
     opacity: 1;
     visibility: visible;
 }
+
+/* BODY */
 
 body {
     color: white;
@@ -84,6 +87,10 @@ main {
 
 .day-name, .day-number, .year {
     margin-left: 8px;
+}
+
+.period {
+    font-weight: bold;
 }
 
 .clock-menu-btn {
@@ -186,7 +193,7 @@ main {
     text-align: center;
     color: white;
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
 }
 
@@ -209,6 +216,8 @@ main {
 }
 
 .greet {
+    /* opacity: 0; */
+    /* visibility: hidden; */
     margin: 0 0 20px;
     font-family: 'Public Sans', sans-serif;
     font-weight: lighter;
@@ -362,6 +371,11 @@ label {
     opacity: 1;
 }
 
+.praise {
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
 /* Quotes */
 .quote-container {
     width: 60%;
@@ -408,7 +422,7 @@ label {
 }
 
 .temperature {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 

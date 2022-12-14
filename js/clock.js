@@ -12,7 +12,7 @@ function displayClock(){
     } else {
         period = 'AM';
     }
-    document.querySelector('.period-v2').innerHTML = period;
+    document.querySelector('.period').innerHTML = period;
 
     // Setting the 12-hour clock-format
     let formatValue = formatSwitchBtn.getAttribute('data-format');

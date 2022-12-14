@@ -24,7 +24,11 @@ function logIn(event) {
   const username = nameInput.value;
   localStorage.setItem('username', username);
   nameContainer.classList.add('hidden');
+  greet.classList.add('visibility');
   greetUser(username);
+  
+
+  console.log('Test')
 }
 
 // Greet
@@ -63,4 +67,9 @@ function editName(event, username) {
   localStorage.clear(username)
 
   nameContainer.addEventListener('submit', logIn);
+}
+
+// To make sure the greeting renders even after hard-refreshing
+if(storedName !== null){
+  greet.classList.add('visibility');
 }

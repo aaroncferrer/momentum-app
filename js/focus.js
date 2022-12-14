@@ -1,7 +1,6 @@
 const focusForm = document.querySelector(".focus-form");
 const focusInput = focusForm.querySelector("input");
 const focus = document.querySelector(".focus");
-const focusContainer = document.querySelector('.focus-container');
 const praise = document.querySelector('.praise')
 const savedFocus = localStorage.getItem("singleFocus");
 
@@ -80,7 +79,6 @@ focusForm.addEventListener("submit", handleFocusSubmit);
     const parsedTodos = JSON.parse(savedFocus);
     singleFocus = parsedTodos;
     parsedTodos.forEach(displayFocus);
-    // focusForm.classList.add('hidden') WILLIAM
     }
 
 window.addEventListener("beforeunload", saveFocus);
