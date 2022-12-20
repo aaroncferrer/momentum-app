@@ -81,7 +81,6 @@ function editTask(event){
 
 function deleteTask(event){
     const li = event.target.parentElement;
-    console.log(li);
     li.classList.add('slide');
     
     li.addEventListener('transitionend', () => {

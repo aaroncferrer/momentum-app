@@ -692,7 +692,7 @@ select {
 }
 
 
-#test-h4:hover {
+.todo-btn:hover {
     transform: scale(1.3);
     transition: 0.2s;
 }
