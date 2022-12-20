@@ -1,8 +1,5 @@
-const imgArr = ['bg1.png', 'bg2.png', 'bg3.png', 'bg4.png', 'bg5.png']
-
-// Math.floor() -> Rounds down and returns the largest integer less than or equal to a given number
-// Math.random() -> Returns a number equal to 0 or less than 1. 
-// Math.random() used with Math.floor() can be used to return random integers. (c) w3schools
+// [SOLUTION 1]
+/* const imgArr = ['bg1.png', 'bg2.png', 'bg3.png', 'bg4.png', 'bg5.png']
 
 function displayBackground() {
     const img = imgArr[Math.floor(Math.random() * imgArr.length)]
@@ -13,5 +10,28 @@ function displayBackground() {
     document.body.append(background)
 }
 displayBackground()
-setInterval(displayBackground, 1000*60)
+setInterval(displayBackground, 1000*60) */
+
+// [SOLUTION 2]
+const background = document.querySelectorAll('.background')
+
+let imgIndex = 0;
+
+function changeBackground(){
+    // Remove .showing class from current background
+    background[imgIndex].classList.remove('showing');
+
+    // Increment of imgIndex so it jumps to the next background
+    imgIndex++;
+
+    // If the counter reaches the last element/background, set it to 0 to start from the first background again.
+    if(imgIndex >= background.length){
+        imgIndex = 0;
+    }
+
+    // Add the .showing class to the next background
+    background[imgIndex].classList.add('showing');
+}
+
+setInterval(changeBackground, 1000*60);
 

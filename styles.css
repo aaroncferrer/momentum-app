@@ -35,14 +35,26 @@ body {
 
 /* //BACKGROUND */
 
-img {
-    z-index: -1;
+.backgrounds-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-size: contain;
-    height: 100%;
     width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.showing {
+    opacity: 1;
+    z-index: -1;
+    transition: none;
 }
 
 /* //MAIN DIV */
@@ -393,7 +405,7 @@ label {
 
 /* //ToDo */
 
-#test-h4 {
+.todo-btn {
     position: absolute;
     cursor: pointer;
     bottom: 2%;
@@ -403,19 +415,260 @@ label {
     font-family: 'Poppins', sans-serif;
 }
 
-.todo-title {
+.modal-title {
+    font-size: 30px;
     color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 12px 0;
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    background-color: grey;
+    background-color: #ebedf5;
+    opacity: 1;
 }
 
 .modal-header {
     display: flex;
     justify-content: center;
+}
+
+.container {
+    margin: 0px 20px;
+    padding: 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header .input-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-section input {
+    border: 1px solid gray;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    width: 100%;
+    margin-right: 10px;
+    height: 35px;
+    border-radius: 30px;
+}
+
+.input-section input::placeholder {
+    opacity: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.input-section input:focus {
+    outline: 1px solid gray;;
+    outline-offset: 2px;
+}
+
+.add-btn {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: rgb(234, 159, 93);
+    border: none;
+    border-radius: 30px;
+    height: 35px;
+    padding: 20px;
+    background-color: none;
+}
+
+.add-btn i {
+    font-size: 20px;
+}
+
+.delete-all-btn {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(234, 159, 93);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+
+.add-btn:hover, .delete-all-btn:hover{
+    background-color: rgb(185, 122, 67);
+}
+
+.todos-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.todos-list li {
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.todos-list span {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #f4f5f7;
+    padding: 6px 20px;
+    border-radius: 30px;
+    overflow-wrap: break-word;
+    width: 10%;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.edit-input {
+    width: 100%;
+    margin-right: 10px;
+    background-color: #f4f5f7;
+    padding: 6px 20px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    border: none;
+}
+
+.edit-input:focus {
+    outline: 1px solid gray;
+    outline-offset: 3px;
+}
+
+.todos-list button {
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.check-btn {
+    background-color: rgb(69, 178, 69);
+}
+
+.edit-btn {
+    background-color: #4545b8;
+}
+
+.delete-btn {
+    background-color: #cf3737;
+}
+
+.fa-trash-can, 
+.fa-check,
+.fa-pen-to-square {
+    pointer-events: none;
+}
+
+.task-container {
+    color: black;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.slide {
+    transform: translateX(10rem);
+    opacity: 0;
+}
+
+.footer-border{
+    margin-top: 25px;
+    border-bottom: 1px solid black;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer button {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background: #ea9f5d;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: none;
+    margin: 20px 0 15px;
+}
+
+.modal-footer button:hover {
+    background-color: rgb(185, 122, 67);
+}
+
+/* Resetting the select tag */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    width: 15rem;
+    border-radius: 30px;
+    margin-left: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-todo {
+    width: 100%;
+}
+
+select {
+    opacity: 85%;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    background: #ea9f5d;
+    top: -5px;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease ;
+}
+
+.select:hover::after {
+    background-color: rgb(185, 122, 67);;
 }
 
 /* //WEATHER */
@@ -444,4 +697,192 @@ label {
     transition: 0.2s;
 }
 
+/* -----------> //RESPONSIVENESS <----------- */
+@media (max-width: 914px){
+    .name-container > input {
+        padding: 0 50px;  
+    }
+
+    .focus-form input {
+        width: 550px;
+    }
+
+    #toggle + label i {
+        transform: translateY(-12px);
+    } 
+
+    .greet {
+        font-size: 30px;
+    }
+
+    .toggle-container {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 550px){
+    .name-container > input {
+        padding: 0px; 
+        font-size: 30px;
+    }
+
+    .name-container > input::placeholder {
+        font-size: 30px;
+    }
+    
+    .focus-form input {
+        width: 300px;
+        font-size: 15px;
+    }
+
+    .greet {
+        margin: 0 0 20px;
+        font-family: 'Public Sans', sans-serif;
+        font-weight: lighter;
+        letter-spacing: 1px;
+        font-size: 12px;
+        color: white;
+    }
+
+    #toggle + label i {
+        font-size: 12px;
+        transform: translateY(-8px);
+    }
+
+    .focus label {
+        margin: 0px 10px;
+    }
+
+    label {
+        margin: 0px;
+        font-size: 25px;
+    }
+
+    .greet-container label {
+        margin-left: 0px;
+    }
+
+    .praise {
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .clock {
+        font-size: 60px;
+    }
+
+    .calendar {
+        font-size: 14px;
+    }
+
+    .cloud {
+        font-size: 20px;
+    }
+    
+    .temperature {
+        font-size: 15px;
+    }
+
+    .location {
+        font-size: 12px;
+    }
+
+    .weather-container {
+        top: 1%
+    }
+
+    .quote-container {
+        bottom: 1%;
+    }
+
+    .quote-text, .quote-author {
+        font-size: 8px;
+    }
+
+    .todo-btn {
+        font-size: 12px;
+        bottom: 1%;
+    }
+
+    .modal-title {
+        font-size: 25px;
+    }
+
+    .container {
+        padding-top: 5px;
+    }
+    
+    .input-section input {
+        padding: 15px;
+        font-size: 15px;
+        height: 25px;
+    }
+    
+    .input-section input::placeholder {
+        font-size: 12px;
+    }
+    
+    .add-btn {
+        height: 25px;
+        padding: 15px;
+    }
+    
+    .add-btn i {
+        font-size: 12px;
+    }
+    
+    .delete-all-btn {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    
+    .todos-list span {
+        padding: 4px 20px;
+        font-size: 15px;
+    }
+    
+    .edit-input {
+        padding: 4px 20px;
+        font-size: 15px;
+    }
+    
+    .todos-list button {
+        padding: 10px;
+        font-size: 10px;
+    }
+    
+    .select {
+        width: 15rem;
+        border-radius: 30px;
+        margin-left: 15px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    select {
+        font-size: 10px;
+        opacity: 85%;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        padding: 9px;
+    }
+    
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        background: #ea9f5d;
+        font-size: 10px;
+        top: -1px;
+        right: 0;
+        padding: 10px 6px;
+        pointer-events: none;
+        transition: all 0.3s ease ;
+    }
+    
+    .select:hover::after {
+        background-color: rgb(185, 122, 67);;
+    }
+    
+}
 

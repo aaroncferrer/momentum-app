@@ -13,6 +13,9 @@
 
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/8077b29d9a.js" crossorigin="anonymous"></script>
+
+    <!-- ICONSCOUT/UNICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     
     <!-- Bootstrap SCSS -->
     <link rel="stylesheet" href="./main.css">
@@ -20,13 +23,20 @@
     <!-- EXTERNAL CSS -->
     <link rel='stylesheet' type='text/css' media='screen' href='./styles.css'>
 
-    <!-- ICONSCOUT/UNICONS -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
 </head>
 <body>
 
     <main>
+
+        <div class="backgrounds-container">
+
+            <img src="./assets/bg1.png" alt="" class="showing background">
+            <img src="./assets/bg2.png" alt="" class="background">
+            <img src="./assets/bg3.png" alt="" class="background">
+            <img src="./assets/bg4.png" alt="" class="background">
+            <img src="./assets/bg5.png" alt="" class="background">
+
+        </div>
         <!-- Clock -->
         <div class="clock-container">
             
@@ -104,21 +114,56 @@
         </div>
 
         <!-- ToDo -->
-        <h4 id="test-h4" data-bs-toggle="modal" data-bs-target="#exampleModal">Todo</h4>
+        <h4 class="todo-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Todo</h4>
   
         <!-- Modal for ToDo -->
         <div class="modal fade  modal-container" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5 todo-title" id="exampleModalLabel">My Todo List</h1>
+                <h1 class="modal-title" id="exampleModalLabel">My Todo List</h1>
                 </div>
                 <div class="modal-body">
-                ...
+
+                <div class="container">
+                    <header>
+
+                        <form class="input-section">
+                            <input type="text" placeholder="Add a todo . . ." class="todo-input" />
+                            <button class="add-btn">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+
+                            <div class="select">
+                                <select name="todos" class="filter-todo">
+                                    <option value="all">All</option>
+                                    <option value="done">Done</option>
+                                    <option value="pending">Pending</option>
+                                </select>
+                            </div>
+                        </form>
+                    </header>
+
+                    <div class="todos-container">
+                        <ul class="todos-list">
+
+                        </ul>
+
+                        <button class="delete-all-btn">
+                            DELETE ALL
+                        </button>
+                    </div>
+            
+                    <div class="footer-border"></div> 
+
+                    <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal">Close</button>
+                    </div>
+
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                 </div>
+                
             </div>
             </div>
         </div>
@@ -130,10 +175,10 @@
     <script src='./js/greet.js'></script>
     <script src='./js/focus.js'></script>
     <script src='./js/quote.js'></script>
-    <script src='./config.js'></script>
     <script src='./js/weather.js'></script>
+    <script src='./js/todo.js'></script>
 
-    <!-- JavaScript -->
+    <!-- JavaScript for Bootstrap-->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
 </body>

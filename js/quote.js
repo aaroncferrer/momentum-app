@@ -7,8 +7,10 @@ function displayQuote(){
             .then(data => {
                 quoteText.innerText = `"${data.content}"`
                 quoteAuthor.innerText = `- ${data.author}`
-            }) 
+            })
 }
 
 displayQuote();
 setInterval(displayQuote, 1000*60);
+
+

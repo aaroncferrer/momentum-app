@@ -1,6 +1,7 @@
 const clock = document.querySelector('.clock')
 
 function displayClock(){
+    // Default behavior of time is in 24-hour format.
     const date = new Date();
     let hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
