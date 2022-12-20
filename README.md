@@ -1,11 +1,11 @@
 # Momentum App
 
-### Overview
+## Overview
 Momentum browser application inspired by the momentum extension for Google Chrome - made with HTML, CSS, Bootstrap, and Vanilla JavaScript.
 
 [Demo link](https://aaroncferrer.github.io/momentum-app/)
 
-### Features
+## Features
 
 📌 Clock with a format toggle (12- or 24-hour format) 
 
