@@ -19,4 +19,4 @@ Momentum browser application inspired by the momentum extension for Google Chrom
 
 📌 Focus section
 
-📌 Todo List (Add, Edit, Delete, & Delete All)
+📌 Todo List (Add, Edit, Delete, Delete All, & Filter)
